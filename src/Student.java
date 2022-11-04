@@ -30,7 +30,6 @@ public class Student {
         return bankAccount;
     }
     public void liveIn(int sum) {
-        //long bill = getBankAccount();
         if (getBankAccount() > sum) {
             int a= (int) (getBankAccount()/sum);
             System.out.println("Balance: "+ getFullName()+" month: "+"["+a+"]");
@@ -43,6 +42,12 @@ public class Student {
             System.out.println("~~~~~~~");
         }
 
+
+    }
+    public void changeInfo(){
+        getFullName().replace(fullName,fullName).replace(address,address);
+        getAddress().replace(address,address);
+        System.out.println(getFullName()+getAddress());
 
     }
 

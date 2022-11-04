@@ -65,16 +65,15 @@ public class Main {
                 bill.liveIn((int) apartment1.payPerMonth(liveWhere(address, students)));
                 System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~");
 
-            }else {System.out.println("Each student pays : "+apartment2.payPerMonth(liveWhere(address, students)));
+            } else {
+                System.out.println("Each student pays : " + apartment2.payPerMonth(liveWhere(address, students)));
                 bill.liveIn((int) apartment2.payPerMonth(liveWhere(address, students)));
                 System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
+                student1.changeInfo();
+            }
         }
-
-
-
-
-    }}
+    }
     public static int liveWhere(String address, Student[]students){
         int counter=0;
         for (Student st:students) {
