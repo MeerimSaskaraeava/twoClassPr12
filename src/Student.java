@@ -1,13 +1,13 @@
+import java.util.Arrays;
+
 public class Student {
     private String fullName;
     private long phoneNumber;
     private String address;
     private long bankAccount;
 
-    Student setFullName(String fullName){
-        this.fullName=fullName;
-        return null;
-    }
+
+
     void setPhoneNumber(long phoneNumber){
         this.phoneNumber=phoneNumber;
     }
@@ -17,6 +17,7 @@ public class Student {
     void setBankAccount(long bankAccount){
         this.bankAccount=bankAccount;
     }
+    void setFullName(String fullName){this.fullName=fullName;}
     String getFullName(){
         return fullName;
     }
@@ -29,26 +30,32 @@ public class Student {
     long getBankAccount(){
         return bankAccount;
     }
-    public void liveIn(int sum) {
-        if (getBankAccount() > sum) {
-            int a= (int) (getBankAccount()/sum);
-            System.out.println("Balance: "+ getFullName()+" month: "+"["+a+"]");
-        } else if (getBankAccount() < sum){
-            int a= (int) (getBankAccount()/sum);
-            System.out.println("Not enough funds: "+getFullName()+" month: "+"["+a+"]");
+    public int liveIn2(int sum) {
+        int a = (int) (getBankAccount() / sum);
+        {
+            if (getBankAccount() > sum) {
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                System.out.println("Balance: =" +getBankAccount()+" som "+ getFullName() + " to live month: " + "[" + a + "]");
+            } else if (getBankAccount() < sum) {
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                System.out.println("Not enough funds: ="+getBankAccount()+" som  "+getFullName()+" to live month: "+"["+a+"]");
 
-
-        }else {
-            System.out.println("~~~~~~~");
+            } else {
+                System.out.println("~~~~~~~");
+            }
+            return a;
         }
-
-
     }
-    public void changeInfo(){
-        getFullName().replace(fullName,fullName).replace(address,address);
-        getAddress().replace(address,address);
-        System.out.println(getFullName()+getAddress());
+    public void changeInfo(Student[] students) {
 
+        for (Student change:students) {
+
+            System.out.println("Address: "+change.address.replace("B1","B3").replace("B2","B1")+
+                    "  student: "+change.fullName.replace("Rustam Mamytov","Emir Kahanov")+change.fullName.replace("Asel Yrakunova","Indira Osmonova").replace("Azamat Ibraimov","Ulan Ulanov"));
+
+
+
+        }
     }
-
 }
+

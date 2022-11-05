@@ -4,30 +4,32 @@ public class Apartment {
     private String address;
 
 
+    void setTitle(String title) {
+        this.title = title;
+    }
 
-    void setTitle(String title){
-        this.title=title;
+    void setPrice(long price) {
+        this.price = price;
     }
-    void setPrice(long price){
-        this.price=price;
+
+    void setAddress(String address) {
+        this.address = address;
     }
-    void setAddress(String address){
-        this.address=address;
-    }
-    String getTitle(){
+
+    String getTitle() {
         return title;
     }
-    long getPrice(){
+
+    long getPrice() {
         return price;
     }
-    String getAddress(){
+
+    String getAddress() {
         return address;
     }
 
     double payPerMonth(double sum) {
         double l = getPrice() / sum;
         return l;
-
-
     }
 }
